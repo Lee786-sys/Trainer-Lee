@@ -1,91 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coach Lee - Trainer</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #1e90ff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0d6efd;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #555;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-  <form action="https://formspree.io/f/mnqwert" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" required>
+    <header>
+        <h1>Welcome to My Training Services</h1>
+        <p>Personal training to achieve your fitness goals</p>
+    </header>
 
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" required>
+    <main>
+        <h2>Contact / Registration Form</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-  <label for="message">Message:</label>
-  <textarea name="message" id="message" required></textarea>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-  <button type="submit">Send</button>
-</form>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-  <header>
-    <h1>Coach Lee</h1>
-    <p>Your Personal Trainer | Chess | Taekwondo | Fitness</p>
-  </header>
+            <label for="message">Message / Training Goals:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I’m Coach Lee, a passionate trainer dedicated to helping people grow in
-         strategy, discipline, and fitness. I specialize in Chess, Taekwondo, and overall 
-         personal development.</p>
-    </section>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
 
-    <section>
-      <h2>Programs Offered</h2>
-      <ul>
-        <li>♟️ Chess Training (Beginners to Advanced)</li>
-        <li>🥋 Taekwondo Classes (Self-Defense & Discipline)</li>
-        <li>💪 Personal Fitness Coaching</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Register / Contact Me</h2>
-      <form id="contactForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone">
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-
-        <button type="submit">Submit</button>
-        <form onsubmit="sendEmail(event)">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-
-      </form>
-      <p id="confirmation" style="display:none; color:green;">✅ Thank you! Your info has been submitted.</p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("YOUR_USER_ID");
-   })();
-</script>
-
-<script type="text/javascript">
-  function sendEmail(e){
-      e.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID', e.target)
-          .then(() => alert("Message sent successfully!"))
-          .catch(err => alert("Failed to send message: " + err));
-  }
-</script>
-
+    <footer>
+        &copy; 2025 My Training Services. All rights reserved.
+    </footer>
 </body>
 </html>
