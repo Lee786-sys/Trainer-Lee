@@ -1,100 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainer Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Welcome to My Training Services</h1>
-        <p>Personal training to achieve your fitness goals</p>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to My Training Services</h1>
+    <p>Personal training to achieve your fitness goals</p>
+  </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="#programs">Programs</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- Training Programs Section -->
-    <main id="programs">
-        <h2>Training Programs</h2>
-        <ul>
-            <li>Personal Fitness Training</li>
-            <li>Martial Arts / Taekwondo Lessons</li>
-            <li>Weight Loss & Nutrition Coaching</li>
-        </ul>
-    </main>
+  <!-- Training Programs Section -->
+  <main id="programs">
+    <h2>Training Programs</h2>
+    <ul>
+      <li>Personal Fitness Training</li>
+      <li>Martial Arts / Taekwondo Lessons</li>
+      <li>Weight Loss & Nutrition Coaching</li>
+    </ul>
+  </main>
 
-    <!-- Contact / Registration Form Section -->
-    <main id="contact">
-        <h2>Contact / Registration Form</h2>
-        
-        <!-- Form Container -->
-        <div id="form-container">
-            <form id="contact-form" action="https://formspree.io/f/mpwlgyod" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+  <!-- Contact / Registration Form Section -->
+  <main id="contact">
+    <h2>Contact / Registration Form</h2>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+    <!-- Form Container -->
+    <div id="form-container">
+      <form id="contact-form" action="https://formspree.io/f/mpwlgyod" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-                <label for="message">Message / Training Goals:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <label for="message">Message / Training Goals:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-        <!-- Thank You Message (hidden by default) -->
-        <div id="thank-you" style="display:none; text-align:center; margin-top:20px;">
-            <h3>Thank you! Your message has been sent.</h3>
-            <p>We will get back to you shortly.</p>
-        </div>
-    </main>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 My Training Services. All rights reserved.
-    </footer>
+    <!-- Thank You Message (hidden by default) -->
+    <div id="thank-you" style="display:none; text-align:center; margin-top:20px;">
+      <h3>Thank you! Your message has been sent.</h3>
+      <p>We will get back to you shortly.</p>
+    </div>
 
-    <!-- JavaScript to show thank-you message -->
-    <script>
-        const form = document.getElementById('contact-form');
-        const formContainer = document.getElementById('form-container');
-        const thankYou = document.getElementById('thank-you');
+  </main>
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            const formData = new FormData(form);
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 My Training Services. All rights reserved.
+  </footer>
 
-            // Send form data via fetch to Formspree
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    formContainer.style.display = 'none'; // Hide the form
-                    thankYou.style.display = 'block';     // Show thank-you message
-                    form.reset(); // Optional: reset form fields
-                } else {
-                    alert("Oops! There was a problem submitting your form.");
-                }
-            })
-            .catch(error => {
-                alert("Oops! There was a problem submitting your form.");
-            });
-        });
-    </script>
+  <!-- JavaScript to show thank-you message -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const formContainer = document.getElementById('form-container');
+    const thankYou = document.getElementById('thank-you');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Stop default form submit
+      const formData = new FormData(form);
+
+      // Send form data to Formspree
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          formContainer.style.display = 'none'; // Hide form
+          thankYou.style.display = 'block';      // Show thank-you
+          form.reset();
+        } else {
+          alert("Oops! There was a problem submitting your form.");
+        }
+      })
+      .catch(error => {
+        alert("Oops! There was a problem submitting your form.");
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
