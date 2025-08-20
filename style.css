@@ -1,6 +1,154 @@
-/* Existing styles remain the same */
+/* =======================
+   General Body Styles
+======================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
 
-/* Thank You Message with Bounce + Fade + Background Flash */
+/* =======================
+   Header / Hero Section
+======================= */
+header {
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+/* =======================
+   Navigation
+======================= */
+nav {
+    text-align: center;
+    margin: 15px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e90ff;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    color: #00bfff;
+    transform: scale(1.05);
+}
+
+/* =======================
+   Main Content
+======================= */
+main {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* =======================
+   Training Programs Cards
+======================= */
+#programs ul {
+    list-style: none;
+    padding: 0;
+}
+
+#programs ul li {
+    background: #f0f8ff;
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#programs ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* =======================
+   Form Styles
+======================= */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 10px rgba(30,144,255,0.4);
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* Buttons */
+button {
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #1e90ff;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #00bfff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+    background-color: #0099ff;
+}
+
+/* =======================
+   Thank You Message
+======================= */
 #thank-you {
     text-align: center;
     margin-top: 25px;
@@ -39,11 +187,49 @@
     }
 }
 
-/* Button Click Animation */
-button:active {
-    transform: scale(0.97);
-    background-color: #0099ff;
+/* =======================
+   Footer
+======================= */
+footer {
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.95rem;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
 }
+
+/* =======================
+   Section Fade-In Animation
+======================= */
+section, main {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================
+   Responsive Design
+======================= */
+@media (max-width: 700px) {
+    main {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
 
 
 
