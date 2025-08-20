@@ -27,6 +27,10 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 /* Main Content */
 main {
     max-width: 600px;
@@ -84,3 +88,4 @@ footer {
     color: #555;
     margin-top: 40px;
 }
+
