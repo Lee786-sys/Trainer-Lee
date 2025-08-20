@@ -58,11 +58,34 @@
         <textarea id="message" name="message"></textarea>
 
         <button type="submit">Submit</button>
+        <form onsubmit="sendEmail(event)">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
       </form>
       <p id="confirmation" style="display:none; color:green;">✅ Thank you! Your info has been submitted.</p>
     </section>
   </main>
 
   <script src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID");
+   })();
+</script>
+
+<script type="text/javascript">
+  function sendEmail(e){
+      e.preventDefault();
+      emailjs.sendForm('YOUR_SERVICE_ID','YOUR_TEMPLATE_ID', e.target)
+          .then(() => alert("Message sent successfully!"))
+          .catch(err => alert("Failed to send message: " + err));
+  }
+</script>
+
 </body>
 </html>
