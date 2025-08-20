@@ -1,141 +1,49 @@
-/* General Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
-}
+/* Existing styles remain the same */
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #1e90ff, #00bfff);
-    color: white;
-    padding: 25px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-}
-
-header p {
-    margin-top: 5px;
-    font-size: 1.1rem;
-}
-
-/* Navigation */
-nav {
-    text-align: center;
-    margin: 15px 0;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #1e90ff;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #00bfff;
-}
-
-/* Main Content */
-main {
-    max-width: 650px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
-}
-
-/* Headings */
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-input, textarea {
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
-    transition: border 0.3s, box-shadow 0.3s;
-}
-
-input:focus, textarea:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 5px rgba(30,144,255,0.5);
-    outline: none;
-}
-
-button {
-    margin-top: 25px;
-    padding: 14px;
-    background-color: #1e90ff;
-    color: white;
-    font-size: 17px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background-color: #00bfff;
-    transform: translateY(-2px);
-}
-
-/* Thank You Message */
+/* Thank You Message with Bounce + Fade + Background Flash */
 #thank-you {
     text-align: center;
     margin-top: 25px;
     display: none;
-    animation: fadeIn 1s ease forwards;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    background: #1e90ff;
+    animation: bounceFlash 1s ease forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px 0;
-    color: #555;
-    margin-top: 40px;
-    font-size: 0.95rem;
-}
-
-/* Responsive Design */
-@media (max-width: 700px) {
-    main {
-        margin: 20px;
-        padding: 20px;
+@keyframes bounceFlash {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-50px);
+        background: #1e90ff;
     }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
+    30% {
+        opacity: 1;
+        transform: scale(1.1) translateY(10px);
+        background: #00bfff;
+    }
+    50% {
+        transform: scale(0.95) translateY(-5px);
+        background: #1e90ff;
+    }
+    70% {
+        transform: scale(1.05) translateY(5px);
+        background: #00bfff;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        background: #1e90ff;
     }
 }
+
+/* Button Click Animation */
+button:active {
+    transform: scale(0.97);
+    background-color: #0099ff;
+}
+
 
 
